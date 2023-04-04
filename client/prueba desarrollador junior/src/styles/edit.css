@@ -1,0 +1,17 @@
+.container-edit{
+    display: flex;
+    color: black;
+    flex-direction: column;
+}
+
+.container-edit form{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-edit form input{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #cbd5e1;
+    margin: 20px;
+}

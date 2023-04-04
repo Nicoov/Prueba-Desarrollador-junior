@@ -1,0 +1,50 @@
+
+.container{
+    width: 100%;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.container form{
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    padding: 3rem;
+}
+
+.container form label {
+    color: black;
+    text-align: left;
+    font-weight: bold;
+}
+
+.container form input {
+    padding: 1rem;
+    color: #94a3b8;
+    border-radius: 0.5rem;
+    border: 1px solid #cbd5e1;
+    margin: 20px;
+}
+
+.container form button {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 0px solid #646cff;
+    transition-property: #646cff;
+    transition-duration: 0.5s;
+}
+
+.container form button:hover {
+    background-color: #646cff;
+    border: 0px solid #646cff;
+}
