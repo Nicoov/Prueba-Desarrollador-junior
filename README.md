@@ -9,7 +9,7 @@ El  desarrollo  del servicio    se  debe    realizar    en  PHP,    Python o    
 <li class="has-line-data" data-line-start="8" data-line-end="10">FrameWork: ReactJS + Vite</li>
 </ul>
 <h3 class="code-line" data-line-start=18 data-line-end=19 ><a id="Inicializacin_18"></a>Inicialización</h3>
-<p class="has-line-data" data-line-start="19" data-line-end="20">Importante!:</p>
+<p class="has-line-data" data-line-start="19" data-line-end="20">Importante:</p>
 <ul>
 <li class="has-line-data" data-line-start="20" data-line-end="22">Primero que todo instalar dependencias con npm install</li>
 </ul>
@@ -25,7 +25,7 @@ El  desarrollo  del servicio    se  debe    realizar    en  PHP,    Python o    
 <li class="has-line-data" data-line-start="30" data-line-end="31">MySQL</li>
 </ul>
 <h3 class="code-line" data-line-start=42 data-line-end=43 ><a id="Inicializacin_42"></a>Inicialización</h3>
-<p class="has-line-data" data-line-start="43" data-line-end="44">Importante!:</p>
+<p class="has-line-data" data-line-start="43" data-line-end="44">Importante:</p>
 <ul>
 <li class="has-line-data" data-line-start="44" data-line-end="46">Primero que todo instalar dependencias con npm install</li>
 </ul>
