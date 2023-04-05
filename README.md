@@ -33,4 +33,8 @@ El  desarrollo  del servicio    se  debe    realizar    en  PHP,    Python o    
 <ul>
 <li class="has-line-data" data-line-start="47" data-line-end="48">npm start</li>
 </ul>
+<h2 class="code-line" data-line-start=26 data-line-end=27 ><a id="BackEnd_26"></a>Base de datos</h2>
+<p class="has-line-data" data-line-start="46" data-line-end="47">El script de la base de datos esta subida en el siguiente link:</p>
+https://www.mediafire.com/file/jvm8fp02foophou/ScriptMysql.rar/file
+
 
