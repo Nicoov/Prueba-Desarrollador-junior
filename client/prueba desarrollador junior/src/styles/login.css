@@ -53,3 +53,9 @@
     background-color: #646cff;
     border: 0px solid #646cff;
 }
+
+.container .login a{
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}

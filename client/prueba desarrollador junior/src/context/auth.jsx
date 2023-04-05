@@ -1,4 +1,4 @@
-import React, { Children, createContext } from "react";
+import React, { createContext } from "react";
 import { useState } from "react";
 import { useContext } from "react";
 import axios from "axios"
@@ -22,7 +22,6 @@ export const Auth = ({ children }) => {
     const navigate = useNavigate();
 
 
-
     //la funcion register user funciona con axios para hacer el login llamando a la base de datos en el endpoint /login, donde se trae email y password
 
     const registerUser = (email, password) => {
@@ -31,9 +30,9 @@ export const Auth = ({ children }) => {
             password: password,
         }).then((response) => {
             if (response.data === "Inicio de sesión exitoso.") {
-                navigate("/inicio")
-                localStorage.setItem('user', response.config.data)
                 setUsuario(response.config.data) //Se almacena el response del login en el estado usuario
+                localStorage.setItem('user', response.config.data)
+                navigate("/inicio")
             }
         }).catch(error => {
             if (error.response.data === "Credenciales incorrectas.") {

@@ -11,9 +11,6 @@ import { ProtectedRoutes } from './components/ProtectedRoutes';
 
 
 function App() {
-
-
-
   return (
     <BrowserRouter>
       <Auth>

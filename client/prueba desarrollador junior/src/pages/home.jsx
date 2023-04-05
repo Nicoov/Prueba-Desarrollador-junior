@@ -1,10 +1,7 @@
-import React, { useEffect, useReducer, useState } from "react";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
-import { useCookies } from 'react-cookie';
-import Modal from "react-modal"
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, } from "react-router-dom";
 import '../styles/home.css'
 import axios from "axios"
-import Cookies from "js-cookie";
 
 
 export const Home = () => {
@@ -14,13 +11,15 @@ export const Home = () => {
 
     const navigate = useNavigate();
 
-
+    // Este useeffect sirve para obtener cargar los datos del 
+    // usuario conectado utilizando localstorage y se guardan en el estado currendata
     useEffect(() => {
         const res = JSON.parse(localStorage.getItem("user"))
         setCurrentData(res)
     }, [])
 
 
+    //Este useeffect permite cargar los datos de los usuarios con axios desde /usuarios y se almacenan en userdata  
     useEffect(() => {
         const getData = async () => {
             try {
@@ -34,6 +33,7 @@ export const Home = () => {
     }, [])
 
 
+    //Esta funcion permite eliminar el usuario de la base de datos 
     const handleDelete = async (id) => {
         try {
             await axios.delete("http://localhost:4000/usuarios/" + id)
@@ -43,15 +43,19 @@ export const Home = () => {
         }
     }
 
+    //Esta funcion cierra la sesion del usuario actual, eliminando el objeto de localstorage. 
     const logoutUser = () => {
         localStorage.removeItem("user");
         navigate('/')
         window.location.reload();
     }
 
+    //Aca busco al usuario actual del array, si el usuario existe se almacena en el currentUser.
     const currentUser = userData?.data?.find((e) => e?.email === currentData?.email)
 
 
+
+    //Con currentUser hago una validacion si el usuario conectado es administrador puede eliminar e editar a todo y si es usuario normal solo se puede editar 
     return (
         <>
             <h2>Bienvenido: {currentUser?.email}</h2>
@@ -78,7 +82,7 @@ export const Home = () => {
                                                         <td>{e?.email}</td>
                                                         <td>{e?.informacion}</td>
                                                         <button onClick={() => handleDelete(e?.id)}>Eliminar</button>
-                                                        <button><Link to={`/editar/${e?.id}`}>Editar</Link></button>
+                                                        <Link to={`/editar/${e?.id}`}><button className="button-editar">Editar</button></Link>
                                                     </tr >
                                                 </>
 
@@ -110,10 +114,9 @@ export const Home = () => {
                                                         <td>{e?.nombre}</td>
                                                         <td>{e?.email}</td>
                                                         <td>{e?.informacion}</td>
-                                                        {currentUser?.id === e?.id && <button className="button-editar"> <Link to={`/editar/${e?.id}`}>Editar</Link></button>}
+                                                        {currentUser?.id === e?.id && <Link to={`/editar/${e?.id}`}><button className="button-editar">Editar</button></Link>}
                                                     </tr>
                                                 </>
-
                                             )
                                         })
                                     }
@@ -123,13 +126,9 @@ export const Home = () => {
                     </div>
                 )
             }
-
-            <button onClick={logoutUser}>SALIR</button>
+            <button className="button-home" onClick={logoutUser}>Salir</button>
         </>
-
     )
-
-
 
 }
 
