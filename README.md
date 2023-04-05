@@ -8,26 +8,6 @@ El  desarrollo  del servicio    se  debe    realizar    en  PHP,    Python o    
 <li class="has-line-data" data-line-start="7" data-line-end="8">lenguaje: Javascript</li>
 <li class="has-line-data" data-line-start="8" data-line-end="10">FrameWork: ReactJS + Vite</li>
 </ul>
-<h3 class="code-line" data-line-start=10 data-line-end=11 ><a id="Dependencias_10"></a>Dependencias</h3>
-<p class="has-line-data" data-line-start="11" data-line-end="12">Para el Front-End se utilizaron las siguientes dependencias</p>
-<table class="table table-striped table-bordered">
-<thead>
-<tr>
-<th>Nombre</th>
-<th>info</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>axios</td>
-<td>Axios nos permite hacer solicitudes al servidor donde se reciben respuestas fáciles de leer.</td>
-</tr>
-<tr>
-<td>react-dom</td>
-<td>Nos permite renderizar los componentes React en el navegador.</td>
-</tr>
-</tbody>
-</table>
 <h3 class="code-line" data-line-start=18 data-line-end=19 ><a id="Inicializacin_18"></a>Inicialización</h3>
 <p class="has-line-data" data-line-start="19" data-line-end="20">Importante!:</p>
 <ul>
@@ -40,34 +20,10 @@ El  desarrollo  del servicio    se  debe    realizar    en  PHP,    Python o    
 <h2 class="code-line" data-line-start=26 data-line-end=27 ><a id="BackEnd_26"></a>Back-End</h2>
 <p class="has-line-data" data-line-start="27" data-line-end="28">Para el desarrollo del Back-End se utilizaron las siguientes herramientas:</p>
 <ul>
-<li class="has-line-data" data-line-start="28" data-line-end="29">framework:  Express.js</li>
+<li class="has-line-data" data-line-start="28" data-line-end="29">FrameWork:  Express.js</li>
 <li class="has-line-data" data-line-start="29" data-line-end="30">Nodejs</li>
 <li class="has-line-data" data-line-start="30" data-line-end="31">MySQL</li>
 </ul>
-<h3 class="code-line" data-line-start=33 data-line-end=34 ><a id="Dependencias_33"></a>Dependencias</h3>
-<p class="has-line-data" data-line-start="34" data-line-end="35">Para el Back-End se utilizaron las siguientes dependencias:</p>
-<table class="table table-striped table-bordered">
-<thead>
-<tr>
-<th>Nombre</th>
-<th>info</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cors</td>
-<td>Permite hacer peticiones.</td>
-</tr>
-<tr>
-<td>bodyparser</td>
-<td>middleware muy usada por el framework expressjs que se encarga de agregar a nuestro request el campo body</td>
-</tr>
-<tr>
-<td>nodemon</td>
-<td>Permite monitorear cualquier cambio y reiniciar automaticamente el servidor.</td>
-</tr>
-</tbody>
-</table>
 <h3 class="code-line" data-line-start=42 data-line-end=43 ><a id="Inicializacin_42"></a>Inicialización</h3>
 <p class="has-line-data" data-line-start="43" data-line-end="44">Importante!:</p>
 <ul>
