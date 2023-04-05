@@ -32,3 +32,13 @@ td{
     color: black;
 }
 
+.button-editar a{
+    text-decoration: none;
+    color: white;
+}
+
+h2{
+    color: white;
+    font-size: 30px;
+}
+

@@ -49,10 +49,7 @@ export const Home = () => {
         window.location.reload();
     }
 
-
-
     const currentUser = userData?.data?.find((e) => e?.email === currentData?.email)
- 
 
 
     return (
@@ -82,7 +79,7 @@ export const Home = () => {
                                                         <td>{e?.informacion}</td>
                                                         <button onClick={() => handleDelete(e?.id)}>Eliminar</button>
                                                         <button><Link to={`/editar/${e?.id}`}>Editar</Link></button>
-                                                    </tr>
+                                                    </tr >
                                                 </>
 
                                             )
@@ -91,7 +88,7 @@ export const Home = () => {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div >
                 ) : (
                     <div className="usuarios-container">
                         <div className="usuarios">
@@ -113,7 +110,7 @@ export const Home = () => {
                                                         <td>{e?.nombre}</td>
                                                         <td>{e?.email}</td>
                                                         <td>{e?.informacion}</td>
-                                                        {currentUser?.id === e?.id && <button> <Link to={`/editar/${e?.id}`}>Editar</Link></button>}
+                                                        {currentUser?.id === e?.id && <button className="button-editar"> <Link to={`/editar/${e?.id}`}>Editar</Link></button>}
                                                     </tr>
                                                 </>
 
@@ -136,17 +133,4 @@ export const Home = () => {
 
 }
 
-const customModal = {
-    content: {
-        top: "50%",
-        left: "50%",
-        right: "auto",
-        bottom: "auto",
-        marginRight: "-50%",
-        transform: "translate(-50%, -50%)",
-        border: "none",
-    },
-    overlay: {
-        backgroundColor: "rgba(0,0,0,0.75)",
-    },
-};
+

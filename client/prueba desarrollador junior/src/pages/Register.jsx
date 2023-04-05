@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import '../styles/login.css'
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
     const [nombre, setNombre] = useState("");
@@ -8,6 +9,7 @@ export const Register = () => {
     const [informacion, setInformacion] = useState("");
     const [password, setPassword] = useState("");
 
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -17,13 +19,18 @@ export const Register = () => {
             informacion: informacion,
             password: password,
         }).then(response => {
-            alert("Usuario creado correctamente")
-            console.log(response.data + "usuario anadido correctamente")
+            if (nombre === " " || email === "" || informacion === "" || password === "") {
+                alert("Rellene los campos")
+            } else {
+                alert("Usuario creado correctamente")
+                navigate("/")
+                console.log(response.data + "usuario anadido correctamente")
+            }
         }).catch(error => {
             console.log(error)
         })
     }
-  
+
 
     return (
         <div className="container">
@@ -33,7 +40,7 @@ export const Register = () => {
                     <input type="text" placeholder="ingrese su nombre" value={nombre} onChange={(e) => setNombre(e.target.value)}></input>
                     <label>Email</label>
                     <input type="email" placeholder="ingrese su email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                    <label>Ingrese informacion</label>
+                    <label>Ingrese información</label>
                     <input type="text" placeholder="ingrese informacion" value={informacion} onChange={(e) => setInformacion(e.target.value)}></input>
                     <label>Ingrese una contraseña</label>
                     <input type="password" placeholder="ingrese password" value={password} onChange={(e) => setPassword(e.target.value)}></input>

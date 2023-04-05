@@ -34,11 +34,11 @@ export const Auth = ({ children }) => {
                 navigate("/inicio")
                 localStorage.setItem('user', response.config.data)
                 setUsuario(response.config.data) //Se almacena el response del login en el estado usuario
-            } else {
-                alert("Error al iniciar")
             }
         }).catch(error => {
-            console.log(error)
+            if (error.response.data === "Credenciales incorrectas.") {
+                alert("Error al iniciar")
+            }
         })
     }
 

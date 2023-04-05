@@ -10,7 +10,6 @@ export const Login = () => {
 
     const { registerUser } = useAuth();
 
-    const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,7 +18,6 @@ export const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         await registerUser(email, password);
-        navigate('/inicio')
     }
 
 
