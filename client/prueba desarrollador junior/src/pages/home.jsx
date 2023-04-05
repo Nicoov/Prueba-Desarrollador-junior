@@ -24,7 +24,7 @@ export const Home = () => {
         const getData = async () => {
             try {
                 const res = await axios.get(`http://localhost:4000/usuarios`);
-                setUserData(res)
+                setUserData(res.data)
             } catch (error) {
                 console.log(error)
             }
@@ -33,26 +33,26 @@ export const Home = () => {
     }, [])
 
 
-    //Esta funcion permite eliminar el usuario de la base de datos 
+   
     const handleDelete = async (id) => {
         try {
-            await axios.delete("http://localhost:4000/usuarios/" + id)
-            window.location.reload();
+          await axios.delete(`http://localhost:4000/usuarios/${id}`);
+          setUserData(userData.filter((user) => user.id !== id)); // Actualizar el estado después de eliminar el usuario
         } catch (error) {
-            console.log(error)
+          console.log(error);
         }
-    }
+      };
 
     //Esta funcion cierra la sesion del usuario actual, eliminando el objeto de localstorage. 
     const logoutUser = () => {
         localStorage.removeItem("user");
-        navigate('/')
-        window.location.reload();
-    }
+        navigate("/");
+        setCurrentData(null); // Actualizar el estado para eliminar la información del usuario actual
+      };
 
+      
     //Aca busco al usuario actual del array, si el usuario existe se almacena en el currentUser.
-    const currentUser = userData?.data?.find((e) => e?.email === currentData?.email)
-
+    const currentUser = userData?.find((e) => e?.email === currentData?.email)
 
 
     //Con currentUser hago una validacion si el usuario conectado es administrador puede eliminar e editar a todo y si es usuario normal solo se puede editar 
@@ -74,7 +74,7 @@ export const Home = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        userData?.data?.map((e) => {
+                                        userData?.map((e) => {
                                             return (
                                                 <>
                                                     <tr>
@@ -107,7 +107,7 @@ export const Home = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        userData?.data?.map((e) => {
+                                        userData?.map((e) => {
                                             return (
                                                 <>
                                                     <tr>
