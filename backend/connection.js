@@ -3,10 +3,12 @@ const mysql = require("mysql");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -44,10 +46,12 @@ app.post('/register', (req, res) => {
 
 
 
+
+
+
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
-    const values = [req.body.email,
-    req.body.password]
+    const values = [req.body.email, req.body.password]
     const sql = 'SELECT * FROM usuarios WHERE email = ? AND password = ?';
     db.query(sql, [...values, email, password], (err, result) => {
         if (err) {
@@ -60,8 +64,11 @@ app.post('/login', (req, res) => {
             return;
         }
         res.status(200).send('Inicio de sesión exitoso.');
+
     });
 });
+
+
 
 app.delete("/usuarios/:id", (req, res) => {
     const userId = req.params.id

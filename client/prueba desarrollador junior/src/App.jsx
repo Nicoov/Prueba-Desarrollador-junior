@@ -21,7 +21,7 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path='/registro' element={<Register />} />
           <Route element={<ProtectedRoutes />}>
-            <Route path='/inicio' element={<Home />} />
+            <Route path='/inicio/' element={<Home />} />
             <Route path='/editar/:id' element={<Editar />} />
           </Route>
         </Routes>

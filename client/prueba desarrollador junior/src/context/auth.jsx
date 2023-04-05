@@ -18,11 +18,10 @@ export const Auth = ({ children }) => {
 
     const [usuario, setUsuario] = useState(null);
 
+
     const navigate = useNavigate();
 
 
-
-    console.log(usuario)
 
     //la funcion register user funciona con axios para hacer el login llamando a la base de datos en el endpoint /login, donde se trae email y password
 
@@ -33,7 +32,8 @@ export const Auth = ({ children }) => {
         }).then((response) => {
             if (response.data === "Inicio de sesión exitoso.") {
                 navigate("/inicio")
-                setUsuario(response) //Se almacena el response del login en el estado usuario
+                localStorage.setItem('user', response.config.data)
+                setUsuario(response.config.data) //Se almacena el response del login en el estado usuario
             } else {
                 alert("Error al iniciar")
             }

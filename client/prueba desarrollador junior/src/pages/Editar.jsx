@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import axios from "axios"
 import '../styles/edit.css'
 
@@ -9,6 +9,10 @@ export const Editar = () => {
         nombre: "",
         informacion: ""
     });
+
+    const { id } = useParams();
+
+
 
     const userId = location.pathname.split("/")[2];
     const navigate = useNavigate();
